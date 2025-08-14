@@ -16,7 +16,7 @@ startButton.addEventListener('click', function() {
         resultDisplay.textContent = '計測中...';
 
         // 計測中の画像表示
-        hintImage.src = 'keisoku.jpg';
+        hintImage.src = 'keisoku.jpg.jpg';
         hintImage.style.display = 'block';
         hintImage.style.marginLeft = 'auto';
         hintImage.style.marginRight = 'auto';
@@ -76,3 +76,4 @@ cheatDot.addEventListener('click', function() {
 
     startButton.textContent = 'スタート';
 });
+
