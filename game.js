@@ -14,7 +14,16 @@ startButton.addEventListener('click', function() {
         startTime = Date.now();
         startButton.textContent = 'ストップ';
         resultDisplay.textContent = '計測中...';
-        hintImage.style.display = 'none';
+
+        // 計測中の画像表示
+        hintImage.src = 'keisoku.jpg';
+        hintImage.style.display = 'block';
+        hintImage.style.marginLeft = 'auto';
+        hintImage.style.marginRight = 'auto';
+        hintImage.style.marginTop = '20px';
+        hintImage.style.width = '600px';
+        hintImage.style.height = 'auto';
+
     } else {
         const endTime = Date.now();
         const elapsedTime = (endTime - startTime) / 1000;
@@ -22,10 +31,10 @@ startButton.addEventListener('click', function() {
         let message;
         let imageSrc;
 
-        if (elapsedTime < targetTime - tolerance) {
+        if (elapsedTime < targetMin) {
             message = `チラ見せ (${elapsedTime.toFixed(3)}秒)`;
             imageSrc = 'hint.jpg.jpg';
-        } else if (elapsedTime > targetTime + tolerance) {
+        } else if (elapsedTime > targetMax) {
             message = `長すぎ (${elapsedTime.toFixed(3)}秒)`;
             imageSrc = 'too-long.jpg.jpg';
         } else {
@@ -35,13 +44,13 @@ startButton.addEventListener('click', function() {
 
         resultDisplay.textContent = message;
 
-        // 画像を大きくして中央表示
+        // 結果画像を表示
         hintImage.src = imageSrc;
         hintImage.style.display = 'block';
         hintImage.style.marginLeft = 'auto';
         hintImage.style.marginRight = 'auto';
         hintImage.style.marginTop = '20px';
-        hintImage.style.width = '600px'; // 横幅大きめ
+        hintImage.style.width = '600px';
         hintImage.style.height = 'auto';
 
         startButton.textContent = 'スタート';
@@ -67,4 +76,3 @@ cheatDot.addEventListener('click', function() {
 
     startButton.textContent = 'スタート';
 });
-
