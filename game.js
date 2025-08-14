@@ -1,7 +1,7 @@
 let startTime;
 
-const targetTime = 19.2; // 目標時間（秒）
-const tolerance = 0.01; // 許容誤差（±0.01秒）
+const targetMin = 19.150; // ぴったり判定の下限
+const targetMax = 19.249; // ぴったり判定の上限
 
 const startButton = document.getElementById('startButton');
 const resultDisplay = document.getElementById('result');
@@ -67,3 +67,4 @@ cheatDot.addEventListener('click', function() {
 
     startButton.textContent = 'スタート';
 });
+
