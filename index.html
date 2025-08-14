@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ストップウォッチゲーム</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #result {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        #hintImage {
+            margin-top: 20px;
+            display: none; /* 最初は画像を非表示にしておく */
+        }
+        /* 裏技用透明ボタン */
+        #cheatDot {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            background: transparent;
+        }
+        h1 {
+            position: relative; /* cheatDot の基準にする */
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        19.2秒で止めてチラ見せを回避しろ！
+        <!-- 裏技：感嘆符の下に透明ボタン -->
+        <span id="cheatDot" style="bottom: 0; right: 0;"></span>
+    </h1>
+    <br>
+    <button id="startButton">スタート</button>
+    <p id="result"></p>
+    <img id="hintImage" src="" alt="ヒント画像">
+    <script src="game.js"></script>
+</body>
+</html>
