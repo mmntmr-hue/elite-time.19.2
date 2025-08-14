@@ -76,4 +76,3 @@ cheatDot.addEventListener('click', function() {
 
     startButton.textContent = 'スタート';
 });
-
